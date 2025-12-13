@@ -4,7 +4,6 @@
 
 [![Available on itch.io](https://img.shields.io/badge/Available%20on-itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white)](https://zivena.itch.io/steamless-proton)
 
-**[Get SteamLess Proton on itch.io](https://zivena.itch.io/steamless-proton)**
 
 ---
 
