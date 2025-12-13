@@ -3,7 +3,6 @@
 **Windows Compatibility Tool for Linux - Run Your Windows Apps and Games**
 
 [![Available on itch.io](https://img.shields.io/badge/Available%20on-itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white)](https://zivena.itch.io/steamless-proton)
-[![Support on Patreon](https://img.shields.io/badge/Support%20on-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/c/Sky_Wright)
 
 **[Get SteamLess Proton on itch.io](https://zivena.itch.io/steamless-proton)**
 
