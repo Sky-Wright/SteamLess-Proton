@@ -112,7 +112,6 @@ Built by an indie developer who switched to Linux in 2024 and needed this to exi
 **Find my work:**
 - [itch.io](https://zivena.itch.io) - Commercial projects
 - [GitHub](https://github.com/Sky-Wright) - Open source tools, documentation, and support
-- [Patreon](https://www.patreon.com/c/Sky_Wright) - Support ongoing development
 
 ---
 
