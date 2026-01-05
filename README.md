@@ -63,9 +63,7 @@ Hardened as my daily driver for 6+ months — battle-tested on real workflows.
 ### Installation – Professional & Transparent
 
 Download the GUI installer from:  
-**[https://zivena.itch.io/steamless-proton](https://zivena.itch.io/steamless-proton)**
-
-→ Run → Follow the wizard (sudo only for deps)
+**[https://zivena.itch.io/steamless-proton](https://zivena.itch.io/steamless-proton)** → Run → Follow the wizard (sudo only for deps)
 
 Tested on Arch, Ubuntu/Mint/Pop, Fedora, openSUSE, Debian.
 
