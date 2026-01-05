@@ -1,159 +1,80 @@
 # SteamLess Proton
 
-**Windows Compatibility Tool for Linux - Run Your Windows Apps and Games**
+**Advanced Proton Orchestrator for Linux**  
+**Professional GUI • True Isolation • Zero Terminal Required**
 
----
+Run **any** Windows .exe — Epic, Battle.net, GOG Galaxy, EA App, heavily modded Skyrim, Blender workflows, legacy apps — exactly like on Windows, but with superior Linux control and isolation.
 
-## What is SteamLess Proton?
+Built by a 25-year Windows veteran who became a Linux power user solving the exact frustrations this tool eliminates.
 
-SteamLess Proton is a professional Windows compatibility solution for Linux that leverages Steam's battle-tested Proton technology to run Windows applications without requiring Steam itself. Unlike other compatibility tools that focus solely on gaming, SteamLess provides enterprise-grade application isolation, seamless desktop integration, and comprehensive dependency management - all through an intuitive GUI that eliminates terminal commands entirely.
+### Highlighted Features
 
-Each Windows application runs in its own isolated environment with real C: drives, Windows registries, and full access to the Windows ecosystem. Whether you're a gamer wanting to play Battle.net titles, a developer using Windows-only tools, or a professional running business software, SteamLess makes Windows compatibility on Linux as simple as installing software on Windows itself.
+- **Right-click .exe → run with SteamLess → guided wizard → perfect desktop integration**  
+  Each app runs in its own isolated environment with real C: drives and registries.
 
-**No Wine required. No Steam required. No terminal commands required.**
+- **Independent dual-path Proton engine — does NOT use UMU**  
+  Ironically, I didn’t know UMU existed until very recently — to build this I reverse-engineered Steam’s Proton usage itself. This app does not utilize any facet of UMU.  
+  SteamLess operates exactly as Steam does, just outside of Steam with customizable paths.  
+  Custom: direct low-overhead GE-Proton + full Steam Runtime containerization-(when Steam is present and SteamLess detects Steam's Proton versions are installed).  
+  Includes toggle per app to select which Proton version to launch with (supports custom Proton builds).
 
----
+- **Professional GUI Installer**  
+  Windows-style multi-step wizard that handles everything: auto theme fusion, installs deps, sets up right-click menus/shortcuts/associations, transparent xterm auditing (see every sudo command live), venv isolation, rollback support — a true "Windows installer for Linux".
 
-## Key Features
+- **Effortless GUI sideload**  
+  Right-click any app in the GUI → "Sideload EXE" (any .exe/.bat/.msi supported) → default file browser opens → pick **any** executable from **anywhere** → it runs directly inside that app’s dedicated Proton prefix.  
+  No manual file copying • No protontricks/winetricks CLI • No navigating hidden compatdata paths.  
+  Install real Microsoft DirectX/.NET/VCRedist, apply patches/mods, run setups directly into your app's existing prefixes — solve Windows dependency issues exactly like you would on Windows. 
 
-### Desktop Integration
-- **Right-click any .exe** → "Open with SteamLess Proton" → guided setup wizard that handles everything automatically
-- Create professional desktop shortcuts and start menu entries for seamless Linux integration
-- Each app gets its own isolated Windows environment, preventing conflicts between applications
+- **Deep per-app customization**  
+  Windows version spoofing (XP–11) executed via .bat which orchestrates direct registry edits within a prefix resulting in native Windows version control,  
+  custom drive/ISO/network mapping,  
+  env vars (Linux launch vars),  
+  launch args (Windows launch args),  
+  GameMode/MangoHUD toggles — all configurable per app without ever touching the terminal.
 
-### No Wine/winetricks Needed
-- **Sideload any .exe** directly into your apps via right-click menu - no more hunting for dependencies
-- Need DirectX for that old game? Run the actual Microsoft installer. Need .NET for business software? Install the real redistributable.
-- Install Windows dependencies just like you would on actual Windows - SteamLess handles the complexity
-- Zero terminal commands, no winetricks scripts, no compatibility layer guesswork
+- **True per-app isolation**  
+  Dedicated Proton prefix per app by default (supports shared prefixes too) — KISS design, no symlinks, no shared prefixes unless you choose to make apps share a prefix.
 
-### Works With or Without Steam
-- **No Steam installed?** SteamLess automatically downloads and configures GE-Proton for optimal performance
-- **Steam installed?** SteamLess intelligently detects and utilizes Steam's Proton versions for maximum compatibility
-- Automatic fallback handling ensures you always have working Proton, regardless of your setup
+- **Advanced dual-boot save sync**  
+  NTFS-aware, bidirectional, timestamp-smart, conflict detection/resolution, dry-run previews — for savegames, projects, whatever. Simply runs rsync between two folders before and after app runs when enabled for that app.
 
-### Advanced Features
-- **Dual-boot save sync** - Seamlessly sync game saves between Windows and Linux partitions with automatic conflict detection and resolution
-- **Windows version control** - Run legacy applications as Windows XP, or modern apps as Windows 11 - per application
-- **GameMode & MangoHUD integration** - Toggle performance optimizations and real-time FPS monitoring per application
-- **Custom environment variables** - Full control over Linux environment variables (DRI_PRIME for GPU switching, VK_ICD_FILENAMES for Vulkan, etc.) to solve edge cases
-- **Custom launch arguments** - Pass command-line arguments directly to Windows executables for advanced configuration
-- **Custom Driveletter mapping** - Map any Linux directory as Windows drive letters (Z: for home, network shares as N:, etc.)
-- **Custom theming** - Automatic KDE Plasma + GTK theme fusion plus 4 built-in professional themes
+- **Polished, native-feeling GUI**  
+  Automatic KDE/GTK theme fusion, tile/list views, icon extraction from .exe files — I've gone through great effort to make sure this feels *integrated* not bolted on.
 
-### KNOWN LIMITATIONS
-- **Kernel-level anti-cheat games** (Fortnite, Valorant, Battlefield 2042, etc.) are deliberately disabled on Linux by their developers as an anti-piracy measure. This is a corporate decision, not a technical limitation of SteamLess.
-- **Microsoft's Ecosystem Lock-in**: Microsoft actively pays partners to prevent Linux compatibility, artificially maintaining Windows market dominance. SteamLess works around this where possible.
-- **GOG Galaxy**: The launcher installs and runs, but has issues installing games directly. **Solution**: Use GOG's offline installers instead - they work perfectly with SteamLess Proton.
+If you want maximum depth, reliability, and control without fragmentation or CLI dependency, this is the tool.
 
----
+### Technical details
 
-## Installation
+- Official GE-Proton is downloaded by SteamLess installer from GloriousEggroll’s GitHub during initial setup 
+- Setup checks dependencies and auto-installs any needed for optimal proton functionality- even on a fresh linux install all you need is to run the installer and it will do everything you need to make that distro ready for proton gaming- distro-specific deps (32-bit libs, multilib, rsync, etc.)  
+- Dual execution: direct GE-Proton orchestration (performance) + full Steam Runtime containerized orchestration (max compatibility)  
+- Dedicated prefix architecture (optional sharing)  
+- Self-healing config recovery & migration scripts for update/OS resilience  
+- **Auditable source code** — pay once, inspect the entire Python codebase. No telemetry.
 
-**[Download from itch.io](https://zivena.itch.io/steamless-proton)**
+Hardened as my daily driver for 6+ months — battle-tested on real workflows.
 
-### Professional GUI Installer
-SteamLess comes with a sophisticated Windows-style executable installer that handles everything automatically—think installing software on Windows: no terminal commands, no dependency hunting, just professional setup that "just works."
+### Known Limitations
 
-**What It Does:**
-- **Embedded Application** - The entire SteamLess app is bundled in the executable, no separate downloads needed
-- **Theme Fusion Detection** - Automatically detects and matches your KDE Plasma + GTK theme for seamless integration
-- **Multi-Step Wizard** - Professional installation wizard with welcome screen, options selection, and progress monitoring
-- **Desktop Integration** - Sets up right-click context menus, desktop shortcuts, and file associations
-- **Global Command Access** - Installs system-wide 'steamless' command for terminal usage
-- **Status Monitoring** - Real-time installation progress with error handling and rollback capabilities
-- **Virtual Environment Setup** - Creates isolated Python environment to avoid system conflicts
+- Kernel anti-cheat games (Valorant, Fortnite, etc.) blocked by developers — not a tool issue  
+- GOG Galaxy: prefer offline installers for best results
 
-**Dependency Management:**
-The installer checks your system and installs everything required for Proton to work properly. No more common compatibility issues:
+### Installation – Professional & Transparent
 
-- **Python Environment**: Python 3.6+, Tkinter for the GUI, venv so SteamLess doesn't mess with your system Python
-- **System Tools**: rsync for syncing those precious game saves, curl for downloading GE-Proton and updates
-- **32-bit Libraries**: Full multilib setup (lib32-glibc, lib32-freetype2, fontconfig, etc.) because 32-bit games aren't dead yet
-- **Wine/Proton Libraries**: All the 32-bit dependencies Proton needs to run Windows stuff without breaking
-- **Steam Runtime**: Uses proper containerization for Steam Proton execution
-- **Cross-Distribution**: Adapts to whatever package manager you're using (pacman on Arch, apt on Ubuntu, etc.)
+Download the GUI installer from:  
+**[https://zivena.itch.io/steamless-proton](https://zivena.itch.io/steamless-proton)**
 
-**Installation Process:**
-1. **Optional but Recommended:** Install xterm for the best installer experience: `sudo pacman -S xterm` (Arch) or `sudo apt install xterm` (Ubuntu/Debian)
-2. Download the `SteamLess-Installer` executable from itch.io
-3. Run the executable
-4. Choose installation options through the GUI wizard
-5. **Terminal Integration:** The installer uses an integrated xterm window to handle parts that must be installed via terminal (dependency installation, system integration)
-6. **Password Entry:** You'll need to enter your sudo password in the xterm (or external terminal if xterm isn't available) when installing system dependencies - this is standard Linux package management
-7. **Transparency:** The terminal shows everything it's doing in real-time - no hidden commands or mystery operations
-8. Desktop integration is configured for immediate use
+→ Run → Follow the wizard (sudo only for deps)
 
-**Why Terminal Integration?**
-Some parts of Linux system setup (like installing packages or setting up desktop integration) absolutely require terminal commands. Rather than hiding this complexity, SteamLess makes it as simple as possible:
-- **Integrated xterm:** Opens automatically within the installer GUI
-- **Clear instructions:** Tells you exactly what it's doing and why
-- **Your control:** You see every command as it runs, and can cancel anytime
-- **Fallback support:** Works with your existing terminal if xterm isn't installed
+Tested on Arch, Ubuntu/Mint/Pop, Fedora, openSUSE, Debian.
 
-Designed for and tested on Arch, Mint, and Ubuntu. Will likely work on any modern 64-bit Linux distribution.
+**One-time purchase • Free updates forever • No DRM**
 
-**System Requirements:**
-- **For the installer itself:** Any modern Linux distribution
-- **For running Windows apps:** Same requirements as the apps would have for windows.
+**Power users get depth and control.**  
+**Windows migrants get effortless simplicity.**  
+**This is my bridge for both worlds.**
 
-## Technical Architecture
+**[Get SteamLess Proton Now →](https://zivena.itch.io/steamless-proton)**
 
-SteamLess Proton is an orchestration system that manages multiple compatibility layers, isolated environments, and cross-platform integration. People keep asking "why not just use Lutris?" Here's the technical difference:
-
-**Modular Component Architecture:**
-- **launcher.py** (728-799): Core orchestration engine handling dual Proton execution paths
-- **proton_manager.py**: Proton version detection, download, and environment setup
-- **app_management.py**: Isolated Wine prefix management with per-app configurations
-- **config.py**: JSON-based persistence with validation and migration support
-- **data_sync.py**: Rsync-based save synchronization with NTFS detection and conflict resolution
-
-**Execution Flow:**
-1. **App Launch**: User selects app → launcher.py resolves Proton version and prefix path
-2. **Environment Setup**: proton_manager.py configures STEAM_COMPAT_* variables based on Proton type
-3. **Prefix Management**: app_management.py ensures isolated Wine environment with custom drive mappings
-4. **Dependency Injection**: Sideloaded executables run in the app's isolated context
-5. **Save Sync**: data_sync.py handles cross-platform save migration with timestamp comparison
-
-**Custom Proton Orchestration:**
-- **Dual execution paths**: GE-Proton runs direct, Steam Proton uses full containerization
-- **Dynamic environment variables**: Different `STEAM_COMPAT_CLIENT_INSTALL_PATH` for each Proton type (fixes BDO and other Steam-dependent games)
-- **GE-Proton drive mapping monitor**: Re-applies mappings after wineboot overwrites them
-- **Steam-dependent game support**: Detects Proton type and sets correct environment variables (launcher.py:640-653)
-
-**Isolation & Security:**
-- **Per-App Prefixes**: Each application gets its own Wine environment (C: drive, registry, etc.)
-- **Drive Mapping**: Linux directories mounted as Windows drive letters (Z: for home, custom mappings)
-- **Environment Containment**: Custom environment variables per application without system pollution
-- **Dependency Scoping**: Windows runtimes and libraries isolated to prevent conflicts
-
-**Cross-Platform Integration:**
-- **Desktop Integration**: MIME types, right-click menus, and shortcuts via steamless.desktop
-- **Theme Fusion**: Automatic detection of KDE Plasma + GTK themes for native appearance
-- **Package Manager Adaptation**: Universal installer supporting pacman, apt, dnf, and zypper
-- **File Association**: .exe files open with SteamLess wizard for seamless onboarding
-
-
-## Why SteamLess Proton Exists
-
-After 30 years on Windows, I switched to Linux in 2024 and fell in love with finally having control over my system. But I quickly discovered that "Linux gaming" was mostly just Steam gaming - the vast majority of Windows software remained completely inaccessible. My heavily-modded Skyrim setup, professional Blender workflow, and business applications were suddenly broken.
-
-Wine and Lutris promised compatibility but delivered frustration: dependency hell, broken installations, and endless tinkering. I spent weeks trying to get basic applications running, only to have them break with the next update.
-
-So I figured out how to use Proton directly - Steam's battle-tested compatibility layer that makes thousands of Windows games work on Linux. I built a GUI for myself that handled all the complexity: automatic Proton management, isolated environments, dependency injection, and seamless desktop integration.
-
-It worked so well I realized other people needed this too. SteamLess isn't just another compatibility tool - it's a professional solution that enables the use of the entire Windows software ecosystem to Linux, making Windows compatibility as simple as installing software on Windows itself.
-
-**Commercial Software with Full Transparency:**
-SteamLess Proton is commercial software with **auditable source code**. You can inspect exactly what it does on your system - no telemetry, no mystery binaries, no hidden behavior.
-
-**One-time purchase. Free updates. No subscriptions. No DRM.**
-
-**Professional Documentation & Development:**
-Every aspect of SteamLess Proton, from the code to this documentation, is crafted with the same attention to detail. The comprehensive technical explanations, real-world testing results, and transparent development process demonstrate a commitment to quality that goes beyond "vibe coding."
-
-See [LICENSE](LICENSE) for complete terms.
-
----
-
-**[Get SteamLess Proton on itch.io →](https://zivena.itch.io/steamless-proton)**
+Full docs + auditable source included with purchase.
