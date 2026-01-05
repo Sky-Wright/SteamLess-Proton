@@ -9,7 +9,8 @@ Built by a 25-year Windows veteran who became a Linux power user solving the exa
 
 ### Highlighted Features
 
-- **Right-click .exe → run with SteamLess → guided wizard → perfect desktop integration**  
+- **Native Desktop Intergration**
+  Right-click .exe → run with SteamLess → guided wizard → perfect desktop integration
   Each app runs in its own isolated environment with real C: drives and registries.
 
 - **Independent dual-path Proton engine — does NOT use UMU**  
