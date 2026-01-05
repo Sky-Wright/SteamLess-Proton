@@ -3,7 +3,7 @@
 **Advanced Proton Orchestrator for Linux**  
 **Professional GUI • True Isolation • Zero Terminal Required**
 
-Run **any** Windows .exe — Epic, Battle.net, GOG Galaxy, EA App, heavily modded Skyrim, Blender workflows, legacy apps — exactly like on Windows, but with superior Linux control and isolation.
+Run **any** Windows .exe — Epic, Battle.net, GOG games, EA App, heavily modded Skyrim, Blender workflows, legacy apps — exactly like on Windows, but with superior Linux control and isolation.
 
 Built by a 25-year Windows veteran who became a Linux power user solving the exact frustrations this tool eliminates.
 
