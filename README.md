@@ -95,7 +95,7 @@ Designed for and tested on Arch, Mint, and Ubuntu. Will likely work on any moder
 
 **System Requirements:**
 - **For the installer itself:** Any modern Linux distribution
-- **For running Windows apps:** Same requirements as Proton/Steam (Vulkan GPU recommended)
+- **For running Windows apps:** Same requirements as the apps would have for windows.
 
 ## Technical Architecture
 
@@ -143,10 +143,6 @@ Wine and Lutris promised compatibility but delivered frustration: dependency hel
 So I figured out how to use Proton directly - Steam's battle-tested compatibility layer that makes thousands of Windows games work on Linux. I built a GUI for myself that handled all the complexity: automatic Proton management, isolated environments, dependency injection, and seamless desktop integration.
 
 It worked so well I realized other people needed this too. SteamLess isn't just another compatibility tool - it's a professional solution that enables the use of the entire Windows software ecosystem to Linux, making Windows compatibility as simple as installing software on Windows itself.
-
-**SteamLess Proton is the tool I built for myself and used every day before deciding to share it.**
-
-Built by Sky Wright, a 31-year-old trans woman and indie developer who switched to Linux in 2024 after 26 years on Windows. Frustrated with the complexity of running Windows apps on Linux, I built SteamLess Proton for myself while surviving on minimal resources. Battle-tested daily for 6+ months, it became the tool I needed to exist.
 
 **Commercial Software with Full Transparency:**
 SteamLess Proton is commercial software with **auditable source code**. You can inspect exactly what it does on your system - no telemetry, no mystery binaries, no hidden behavior.
